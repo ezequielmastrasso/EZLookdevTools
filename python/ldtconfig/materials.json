@@ -1,0 +1,30 @@
+{
+    "material_mapping": {
+        "PxrSurface": {
+            "diffuseWeight": "diffuseGain",
+            "base": "diffuseGain",
+            "diffuseColor": "diffuseColor",
+            "baseColor": "diffuseColor",
+            "diffuseRoughness": "diffuseRoughness",
+            "specularColor": "specularEdgeColor",
+            "specularRoughness": "specularRoughness",
+            "specularIor": "specularIor",
+            "specularBump": "specularBumpNormal",
+            "metalness": "specularExtinctionCoeff",
+            "coatColor": "clearcoatEdgeColor",
+            "coatRoughness": "clearcoatRoughness",
+            "coatIor": "clearcoatIor",
+            "coatBump": "clearcoatBumpNormal",
+            "subsurfaceWeight": "subsurfaceGain",
+            "subsurfaceColor": "subsurfaceColor",
+            "transmissionWeight": "refractionGain",
+            "reflectionWeight": "reflectionGain",
+            "transmissionColor": "refractionColor",
+            "glassRoughness": "glassRoughness",
+            "emissionWeight": "glowGain",
+            "emissionColor": "glowColor",
+            "normal": "bumpNormal",
+            "bump": "bumpNormal"
+        }
+    }
+}

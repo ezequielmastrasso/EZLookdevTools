@@ -1,0 +1,9 @@
+[Core]
+Name = Maya Surfacing Projects
+Module = mayasurfacingprojects
+
+[Documentation]
+Author = Ezequiel Mastrasso
+Version = 1.0
+Website = //ezequielm.com
+Description = Prepare Surfacing Projects in Maya

@@ -1,0 +1,1050 @@
+#! /usr/local/Nuke11.1v4/libnuke-11.1.4.so -nx
+version 11.1 v4
+add_layer {lightgroup_a lightgroup_a.red lightgroup_a.green lightgroup_a.blue}
+add_layer {lightgroup_b lightgroup_b.red lightgroup_b.green lightgroup_b.blue}
+add_layer {lightgroup_c lightgroup_c.red lightgroup_c.green lightgroup_c.blue}
+add_layer {lightgroup_d lightgroup_d.red lightgroup_d.green lightgroup_d.blue}
+add_layer {lightgroup_e lightgroup_e.red lightgroup_e.green lightgroup_e.blue}
+add_layer {lightgroup_f lightgroup_f.red lightgroup_f.green lightgroup_f.blue}
+add_layer {lightgroup_g lightgroup_g.red lightgroup_g.green lightgroup_g.blue}
+add_layer {lightgroup_h lightgroup_h.red lightgroup_h.green lightgroup_h.blue}
+add_layer {lightgroup_i lightgroup_i.red lightgroup_i.green lightgroup_i.blue}
+add_layer {lightgroup_j lightgroup_j.red lightgroup_j.green lightgroup_j.blue}
+add_layer {lightgroup_k lightgroup_k.red lightgroup_k.green lightgroup_k.blue}
+add_layer {lightgroup_l lightgroup_l.red lightgroup_l.green lightgroup_l.blue}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {4 tiling M {1x5 1x12}}
+ addUserKnob {41 in l 1 T shuffle_a.in}
+ addUserKnob {41 in_1 l 2 T shuffle_b.in}
+ addUserKnob {41 in_2 l 3 T shuffle_c.in}
+ addUserKnob {41 in_3 l 4 T shuffle_d.in}
+ addUserKnob {41 in_4 l 5 T shuffle_e.in}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 in_5 l 6 T shuffle_f.in}
+ addUserKnob {41 in_6 l 7 T shuffle_g.in}
+ addUserKnob {41 in_7 l 8 T shuffle_h.in}
+ addUserKnob {41 in_8 l 9 T shuffle_i.in}
+ addUserKnob {41 in_9 l 10 T shuffle_j.in}
+ addUserKnob {41 in_10 l 11 T shuffle_k.in}
+ addUserKnob {41 in_11 l 12 T shuffle_l.in}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 509
+  ypos -217
+ }
+ Dot {
+  name Dot1
+  xpos 543
+  ypos -177
+ }
+set Nab1d830 [stack 0]
+ Dot {
+  name Dot13
+  xpos 655
+  ypos -177
+ }
+set Nab22100 [stack 0]
+ Dot {
+  name Dot2
+  xpos 778
+  ypos -177
+ }
+set Nab269f0 [stack 0]
+ Dot {
+  name Dot3
+  xpos 894
+  ypos -177
+ }
+set Nab2b220 [stack 0]
+ Dot {
+  name Dot4
+  xpos 1009
+  ypos -177
+ }
+set Nab2faa0 [stack 0]
+ Dot {
+  name Dot5
+  xpos 1119
+  ypos -177
+ }
+set Nab34340 [stack 0]
+ Dot {
+  name Dot6
+  xpos 1229
+  ypos -177
+ }
+set Nab38bc0 [stack 0]
+ Dot {
+  name Dot7
+  xpos 1329
+  ypos -177
+ }
+set Nab3d3a0 [stack 0]
+ Dot {
+  name Dot8
+  xpos 1430
+  ypos -177
+ }
+set Nab41d80 [stack 0]
+ Dot {
+  name Dot9
+  xpos 1540
+  ypos -177
+ }
+set Nab46590 [stack 0]
+ Shuffle {
+  in lightgroup_j
+  alpha black
+  name shuffle_j
+  xpos 1506
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_j.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 106 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty9
+  xpos 1508
+  ypos -75
+ }
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos 1508
+  ypos -4
+ }
+ set C145fbb50 [stack 0]
+ Transform {
+  scale {0.99 0.98}
+  center {960 405}
+  name Transform8
+  xpos 1510
+  ypos 24
+ }
+ set Cd761220 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  color 0.08
+  name Constant1
+  xpos 345
+  ypos 7
+ }
+set Ne0e2720 [stack 0]
+ Merge2 {
+  inputs 2
+  name Merge11
+  xpos 1508
+  ypos 46
+ }
+ Transform {
+  translate {{(root.width/2)-(root.width/4)} 0}
+  scale 0.25
+  name Transform20
+  xpos 966
+  ypos 425
+ }
+push $Nab41d80
+ Shuffle {
+  in lightgroup_i
+  alpha black
+  name shuffle_i
+  xpos 1396
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_i.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 105 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty8
+  xpos 1391
+  ypos -76
+ }
+clone $C145fbb50 {
+  xpos 1394
+  ypos -3
+  selected false
+ }
+clone $Cd761220 {
+  xpos 1393
+  ypos 22
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge10
+  xpos 1391
+  ypos 44
+ }
+ Transform {
+  translate {0 {0}}
+  scale 0.25
+  name Transform19
+  xpos 877
+  ypos 425
+ }
+push $Nab2faa0
+ Shuffle {
+  in lightgroup_e
+  alpha black
+  name shuffle_e
+  xpos 975
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_e.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 101 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty5
+  xpos 975
+  ypos -87
+ }
+clone $C145fbb50 {
+  xpos 975
+  ypos -16
+  selected false
+ }
+clone $Cd761220 {
+  xpos 977
+  ypos 12
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge6
+  xpos 975
+  ypos 34
+ }
+set N9cff230 [stack 0]
+ Transform {
+  translate {{0} {(root.height/2)-(root.height/4)}}
+  scale 0.25
+  name Transform18
+  xpos 869
+  ypos 380
+ }
+push $Nab34340
+ Shuffle {
+  in lightgroup_f
+  alpha black
+  name shuffle_f
+  xpos 1085
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_f.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 102 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty10
+  xpos 1083
+  ypos -79
+ }
+clone $C145fbb50 {
+  xpos 1083
+  ypos -12
+  selected false
+ }
+clone $Cd761220 {
+  xpos 1083
+  ypos 12
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge12
+  xpos 1083
+  ypos 36
+ }
+ Transform {
+  translate {{(root.width/2)-(root.width/4)} {(root.height/2)-(root.height/4)}}
+  scale 0.25
+  name Transform17
+  xpos 957
+  ypos 381
+ }
+push $Nab46590
+ Dot {
+  name Dot10
+  xpos 1639
+  ypos -177
+ }
+set Nab4ae10 [stack 0]
+ Dot {
+  name Dot11
+  xpos 1740
+  ypos -177
+ }
+ Shuffle {
+  in lightgroup_l
+  alpha black
+  name shuffle_l
+  xpos 1706
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_l.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 108 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty12
+  xpos 1710
+  ypos -68
+ }
+clone $C145fbb50 {
+  xpos 1710
+  ypos 3
+  selected false
+ }
+clone $Cd761220 {
+  xpos 1712
+  ypos 31
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge14
+  xpos 1710
+  ypos 53
+ }
+ Transform {
+  translate {{(root.width/2)+((root.width/4))} {0}}
+  scale 0.25
+  name Transform15
+  xpos 1132
+  ypos 425
+ }
+push $Nab4ae10
+ Shuffle {
+  in lightgroup_k
+  alpha black
+  name shuffle_k
+  xpos 1605
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_k.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 107 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty11
+  xpos 1610
+  ypos -69
+ }
+clone $C145fbb50 {
+  xpos 1610
+  ypos 2
+  selected false
+ }
+clone $Cd761220 {
+  xpos 1612
+  ypos 30
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge13
+  xpos 1610
+  ypos 52
+ }
+ Transform {
+  translate {{(root.width/2)} {0}}
+  scale 0.25
+  name Transform16
+  xpos 1053
+  ypos 423
+ }
+push $Nab3d3a0
+ Shuffle {
+  in lightgroup_h
+  alpha black
+  name shuffle_h
+  xpos 1295
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_h.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 104 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty7
+  xpos 1291
+  ypos -78
+ }
+clone $C145fbb50 {
+  xpos 1294
+  ypos -16
+  selected false
+ }
+clone $Cd761220 {
+  xpos 1290
+  ypos 14
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge9
+  xpos 1291
+  ypos 40
+ }
+ Transform {
+  translate {{(root.width/2)+((root.width/4))} {(root.height/2)-(root.height/4)}}
+  scale 0.25
+  name Transform14
+  xpos 1130
+  ypos 389
+ }
+push $Nab269f0
+ Shuffle {
+  in lightgroup_c
+  alpha black
+  name shuffle_c
+  xpos 744
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_c.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 99 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty3
+  xpos 744
+  ypos -83
+ }
+clone $C145fbb50 {
+  xpos 747
+  ypos -21
+  selected false
+ }
+clone $Cd761220 {
+  xpos 743
+  ypos 9
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge4
+  xpos 744
+  ypos 35
+ }
+set N1575bdc0 [stack 0]
+ Transform {
+  translate {{(root.width/2)} {(root.height/2)}}
+  scale 0.25
+  name Transform13
+  xpos 1044
+  ypos 343
+ }
+push $Nab2b220
+ Shuffle {
+  in lightgroup_d
+  alpha black
+  name shuffle_d
+  xpos 860
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_d.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 100 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty4
+  xpos 860
+  ypos -85
+ }
+clone $C145fbb50 {
+  xpos 863
+  ypos -12
+  selected false
+ }
+clone $Cd761220 {
+  xpos 862
+  ypos 13
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge5
+  xpos 860
+  ypos 35
+ }
+set N19edab10 [stack 0]
+ Transform {
+  translate {{(root.width/2)+((root.width/4))} {(root.height/2)}}
+  scale 0.25
+  name Transform12
+  xpos 1133
+  ypos 344
+ }
+push $Nab38bc0
+ Shuffle {
+  in lightgroup_g
+  alpha black
+  name shuffle_g
+  xpos 1195
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_g.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 103 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 19
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty6
+  xpos 1195
+  ypos -77
+ }
+clone $C145fbb50 {
+  xpos 1195
+  ypos -17
+  selected false
+ }
+clone $Cd761220 {
+  xpos 1195
+  ypos 17
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge8
+  xpos 1195
+  ypos 43
+ }
+ Transform {
+  translate {{(root.width/2)} {(root.height/2)-(root.height/4)}}
+  scale 0.25
+  name Transform10
+  xpos 1045
+  ypos 383
+ }
+push $Nab22100
+ Shuffle {
+  in lightgroup_b
+  alpha black
+  name shuffle_b
+  xpos 621
+  ypos -119
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_b.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 98 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 18
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty2
+  xpos 621
+  ypos -82
+ }
+clone $C145fbb50 {
+  xpos 621
+  ypos -22
+  selected false
+ }
+clone $Cd761220 {
+  xpos 621
+  ypos 12
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge3
+  xpos 621
+  ypos 38
+ }
+set Nf9e4cc0 [stack 0]
+ Transform {
+  translate {{(root.width/2)+((root.width/4))} {(root.height/2)+(root.height/4)}}
+  scale 0.25
+  name Transform11
+  xpos 1127
+  ypos 304
+ }
+push 0
+push $Nab1d830
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message beauty
+  old_message {{98 101 97 117 116 121}
+    }
+  box {-3.5 0.5 1920 112}
+  transforms {{0 2}
+    }
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.7
+  background_border_x 30
+  background_border_y 4.9
+  name beauty
+  xpos 401
+  ypos -83
+  disable true
+ }
+ Transform {
+  translate {{-(root.width/2)+((root.width/2)/2)} {(root.height/2)-((root.height/2)/2)}}
+  scale 0.5
+  center {960 405}
+  name Transform2
+  xpos 923
+  ypos 328
+ }
+push $Nab1d830
+ Shuffle {
+  in lightgroup_a
+  alpha black
+  name shuffle_a
+  xpos 509
+  ypos -117
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message "  \[value shuffle_a.in]  "
+  old_message {{32 32 108 105 103 104 116 103 114 111 117 112 95 97 32 32}
+    }
+  old_expression_markers {{2 13}
+    }
+  box {0 0 1920 112}
+  yjustify bottom
+  transforms {{0 2}
+    }
+  cursor_position 24
+  font {{ FreeMono : Regular : gnu-free/FreeMono.ttf : 0 }}
+  global_font_scale 0.5
+  center {960 405}
+  cursor_initialised true
+  autofit_bbox false
+  initial_cursor_position {{41.99987793 759.999939}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 960 405 0 0 1 1 0 0 0 0}
+    }
+  p1 {380 700}
+  p0 {66 714}
+  enable_background true
+  background_opacity 0.95
+  background_border_x 30
+  background_border_y 4.9
+  name beauty1
+  xpos 509
+  ypos -84
+ }
+clone $C145fbb50 {
+  xpos 509
+  ypos -17
+  selected false
+ }
+clone $Cd761220 {
+  xpos 509
+  ypos 7
+  selected false
+ }
+push $Ne0e2720
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 509
+  ypos 31
+ }
+set Nf985ee0 [stack 0]
+ Transform {
+  translate {{(root.width/2)} {(root.height/2)+(root.height/4)}}
+  scale 0.25
+  name Transform9
+  xpos 1041
+  ypos 306
+ }
+ Merge2 {
+  inputs 13+1
+  name Merge7
+  xpos 1108
+  ypos 503
+ }
+push $N9cff230
+ Transform {
+  translate {{(root.width/2)-((root.width/3)/2)-((root.width/3)*2)} {((root.height/2)-((root.height/3)/2))-((root.height/3)*2)}}
+  scale 0.333333
+  center {960 405}
+  name Transform7
+  xpos 521
+  ypos 432
+ }
+push $N19edab10
+ Transform {
+  translate {{(root.width/2)-((root.width/3)/2)-(root.width/3)} {((root.height/2)-((root.height/3)/2))-((root.height/3)*2)}}
+  scale 0.333333
+  center {960 405}
+  name Transform6
+  xpos 616
+  ypos 433
+ }
+push $N1575bdc0
+ Transform {
+  translate {{(root.width/2)-((root.width/3)/2)} {((root.height/2)-((root.height/3)/2))-((root.height/3)*2)}}
+  scale 0.333333
+  center {960 405}
+  name Transform5
+  xpos 703
+  ypos 430
+ }
+push $Nf9e4cc0
+ Transform {
+  translate {{(root.width/2)-((root.width/3)/2)} {((root.height/2)-((root.height/3)/2))-(root.height/3)}}
+  scale 0.333333
+  center {960 405}
+  name Transform4
+  xpos 701
+  ypos 394
+ }
+push 0
+push $Nf985ee0
+ Transform {
+  translate {{(root.width/2)-((root.width/3)/2)} {(root.height/2)-((root.height/3)/2)}}
+  scale 0.333333
+  center {960 405}
+  name Transform3
+  xpos 698
+  ypos 362
+ }
+push $Nab1d830
+ Dot {
+  name Dot14
+  xpos 117
+  ypos -177
+ }
+ Transform {
+  translate {{-(root.width/2)+(root.width/3)} {(root.height/2)-(root.height/3)}}
+  scale 0.66666
+  center {960 405}
+  name Transform1
+  xpos 569
+  ypos 382
+ }
+ Merge2 {
+  inputs 6+1
+  name Merge1
+  xpos 873
+  ypos 475
+ }
+ Switch {
+  inputs 2
+  which {{parent.tiling}}
+  name Switch1
+  xpos 986
+  ypos 566
+ }
+ Crop {
+  box {0 0 1920 810}
+  reformat true
+  crop false
+  name Crop1
+  xpos 986
+  ypos 620
+ }
+ Output {
+  name Output1
+  xpos 986
+  ypos 670
+ }
+end_group

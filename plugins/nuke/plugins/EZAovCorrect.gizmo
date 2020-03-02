@@ -1,0 +1,184 @@
+#! /usr/local/Nuke11.1v4/libnuke-11.1.4.so -nx
+version 11.1 v4
+add_layer {lightgroup_a lightgroup_a.red lightgroup_a.green lightgroup_a.blue}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 in l "aov selection" T select_aov.in}
+ addUserKnob {6 mute +STARTLINE}
+ addUserKnob {6 solo -STARTLINE}
+ addUserKnob {20 exposure n 1}
+ exposure 0
+ addUserKnob {41 gang T exposure_aov.gang}
+ addUserKnob {41 red T exposure_aov.red}
+ addUserKnob {41 green T exposure_aov.green}
+ addUserKnob {41 blue T exposure_aov.blue}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 color_correct n 1}
+ color_correct 0
+ addUserKnob {19 grade_aov_whitepoint l whitepoint R 0 4}
+ grade_aov_whitepoint 1
+ addUserKnob {6 grade_aov_whitepoint_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_whitepoint_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_whitepoint_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_whitepoint_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_whitepoint_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_whitepoint_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {19 grade_aov_white l gain R 0 4}
+ grade_aov_white 1
+ addUserKnob {6 grade_aov_white_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_white_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_white_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_white_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_white_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_white_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {19 grade_aov_add l offset R -1 1}
+ addUserKnob {6 grade_aov_add_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_add_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_add_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_add_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_add_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_add_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {19 grade_aov_gamma l gamma R 0.2 5}
+ grade_aov_gamma 1
+ addUserKnob {6 grade_aov_gamma_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_gamma_panelDropped_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_gamma_panelDropped_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_gamma_panelDropped_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {6 grade_aov_gamma_panelDropped_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {6 grade_aov_gamma_panelDropped_1_1_1_1_1 l "panel dropped state" -STARTLINE +HIDDEN}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 221
+  ypos -157
+ }
+set Nd22d080 [stack 0]
+ Dot {
+  name Dot1
+  xpos 134
+  ypos -154
+ }
+ Dot {
+  name Dot2
+  xpos 134
+  ypos 278
+ }
+push $Nd22d080
+ Shuffle {
+  in lightgroup_a
+  in2 rgba
+  alpha black
+  name select_aov
+  xpos 221
+  ypos -61
+ }
+set Nd23a900 [stack 0]
+ Grade {
+  whitepoint {{parent.grade_aov_whitepoint.r} {parent.grade_aov_whitepoint.g} {parent.grade_aov_whitepoint.b} {parent.grade_aov_whitepoint.a}}
+  whitepoint_panelDropped {{parent.grade_aov_whitepoint_panelDropped}}
+  white {{parent.grade_aov_white.r} {parent.grade_aov_white.g} {parent.grade_aov_white.b} {parent.grade_aov_white.a}}
+  white_panelDropped {{parent.grade_aov_white_panelDropped}}
+  add {{parent.grade_aov_add.r} {parent.grade_aov_add.g} {parent.grade_aov_add.b} {parent.grade_aov_add.a}}
+  add_panelDropped {{parent.grade_aov_add_panelDropped}}
+  gamma {{parent.grade_aov_gamma.r} {parent.grade_aov_gamma.g} {parent.grade_aov_gamma.b} {parent.grade_aov_gamma.a}}
+  gamma_panelDropped {{parent.grade_aov_gamma_panelDropped}}
+  name grade_aov
+  xpos 221
+  ypos -17
+ }
+ EXPTool {
+  mode Stops
+  name exposure_aov
+  selected true
+  xpos 221
+  ypos 21
+ }
+set Nd85ddc0 [stack 0]
+ Dot {
+  name Dot4
+  xpos 165
+  ypos 24
+ }
+ Dot {
+  name Dot3
+  xpos 165
+  ypos 180
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 346
+  ypos -11
+ }
+push $Nd85ddc0
+ Switch {
+  inputs 2
+  which {{parent.mute}}
+  name mute
+  xpos 221
+  ypos 70
+ }
+ Remove {
+  operation keep
+  channels rgba
+  name keep_rgba
+  xpos 221
+  ypos 103
+ }
+ Clamp {
+  maximum_enable false
+  name negative
+  xpos 221
+  ypos 131
+ }
+set Nd88d880 [stack 0]
+push $Nd23a900
+push $Nd22d080
+ Merge2 {
+  inputs 2
+  operation from
+  name subtract_aov
+  xpos 399
+  ypos -61
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name add_aov
+  xpos 399
+  ypos 137
+ }
+ Switch {
+  inputs 2
+  which {{parent.solo}}
+  name solo
+  xpos 221
+  ypos 222
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name restore_alpha
+  xpos 221
+  ypos 269
+ }
+ Output {
+  name Output1
+  xpos 221
+  ypos 401
+ }
+push $Nd88d880
+ Viewer {
+  frame_range 1-100
+  colour_sample_bbox {-0.7395833135 0.3166666627 -0.7385416627 0.3177083433}
+  samplepoints {{-0.7395833135 0.3166666627}
+    }
+  name Viewer1
+  xpos 397
+  ypos 415
+ }
+end_group

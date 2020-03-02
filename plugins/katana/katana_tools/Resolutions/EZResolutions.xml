@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE stormXML>
+<stormXML version="1k">
+  <formats>
+    <format width="1920" height="810" pixelAspect="1.0" name="HD-2.37" groupName="CinemaScope" />
+    <format width="960" height="405" pixelAspect="1.0" name="HD-2.37 half" groupName="CinemaScope" />
+    <format width="640" height="270" pixelAspect="1.0" name="HD-2.37 third" groupName="CinemaScope" />
+    <format width="1920" height="817" pixelAspect="1.0" name="HD-2.35" groupName="CinemaScope" />
+    <format width="960" height="408" pixelAspect="1.0" name="HD-2.35 half" groupName="CinemaScope" />
+    <format width="640" height="272" pixelAspect="1.0" name="HD-2.35 third" groupName="CinemaScope" />
+  </formats>
+</stormXML>

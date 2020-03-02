@@ -1,0 +1,9 @@
+[Core]
+Name = Maya tools
+Module = mayatools
+
+[Documentation]
+Author = Ezequiel Mastrasso
+Version = 1.0
+Website = //ezequielm.com
+Description = tools for Maya

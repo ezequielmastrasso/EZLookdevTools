@@ -1,0 +1,9 @@
+[Core]
+Name = TxMake
+Module = txmake
+
+[Documentation]
+Author = Ezequiel Mastrasso
+Version = .1
+Website = //ezequielm.com
+Description = Convert Images into tex format

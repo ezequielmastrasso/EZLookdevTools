@@ -1,0 +1,334 @@
+<!DOCTYPE MariML>
+<Mari Version="2" >
+ <MriSerializableObject Type="MriSerializableObject" >
+  <objectName Type="QString" ></objectName>
+  <selected Type="bool" >false</selected>
+  <m_Channels Type="MriChannelInfo" ContainerType="QVector" >
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >true</selected>
+    <channelName Type="QString" >Base Color</channelName>
+    <fileTemplate Type="QString" >$PATH/Base Color.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >false</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|0|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >yes</selected>
+    <channelName Type="QString" >Metallic</channelName>
+    <fileTemplate Type="QString" >$PATH/Metallic.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(1,1,1,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Subsurface</channelName>
+    <fileTemplate Type="QString" >$PATH/Subsurface.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Specular</channelName>
+    <fileTemplate Type="QString" >$PATH/Specular.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >true</selected>
+    <channelName Type="QString" >Roughness</channelName>
+    <fileTemplate Type="QString" >$PATH/Roughness.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Specular Tint</channelName>
+    <fileTemplate Type="QString" >$PATH/Specular Tint.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Anisotropic</channelName>
+    <fileTemplate Type="QString" >$PATH/Anisotropic.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Sheen</channelName>
+    <fileTemplate Type="QString" >$PATH/Sheen.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Sheen Tint</channelName>
+    <fileTemplate Type="QString" >$PATH/Sheen Tint.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Clearcoat</channelName>
+    <fileTemplate Type="QString" >$PATH/Clearcoat.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Clearcoat Gloss</channelName>
+    <fileTemplate Type="QString" >$PATH/Clearcoat Gloss.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Ambient Occlusion</channelName>
+    <fileTemplate Type="QString" >$PATH/Ambient Occlusion.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(1,1,1,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Emissive Color</channelName>
+    <fileTemplate Type="QString" >$PATH/Emissive Color.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >false</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0,0,0,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|0|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Normal</channelName>
+    <fileTemplate Type="QString" >$PATH/Normal.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,1,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >true</selected>
+    <channelName Type="QString" >Bump</channelName>
+    <fileTemplate Type="QString" >$PATH/Bump.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Vector</channelName>
+    <fileTemplate Type="QString" >$PATH/Vector.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <fileSpace Type="QString" >Vector</fileSpace>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,1,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+   <MriChannelInfo Type="MriChannelInfo" >
+    <objectName Type="QString" ></objectName>
+    <selected Type="bool" >false</selected>
+    <channelName Type="QString" >Displacement</channelName>
+    <fileTemplate Type="QString" >$PATH/Displacement.$UDIM.tif</fileTemplate>
+    <fileFormat Type="QString" ></fileFormat>
+    <path Type="QString" ></path>
+    <scalar Type="bool" >true</scalar>
+    <width Type="int" >2048</width>
+    <height Type="int" >2048</height>
+    <channels Type="QString" >RGBA</channels>
+    <depth Type="QString" >Byte</depth>
+    <color Type="MriColor" >(0.5,0.5,0.5,1)</color>
+    <colorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</colorSpaceConfig>
+    <scalarColorSpaceConfig Type="MriColorSpaceConfig">Automatic|Automatic|Automatic|Automatic|0|0|0|1|||</scalarColorSpaceConfig>
+    <category Type="QString" >Look Dev Tools - Metallic - Games</category>
+    <shader Type="QString" >Look Dev Tools</shader>
+   </MriChannelInfo>
+
+  </m_Channels>
+ </MriSerializableObject>
+</Mari>

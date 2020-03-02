@@ -1,0 +1,664 @@
+#! /usr/local/Nuke11.1v4/libnuke-11.1.4.so -nx
+version 11.1 v4
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {26 mute l "mute ligthgroups"}
+ addUserKnob {6 mute_a l a +STARTLINE}
+ addUserKnob {6 mute_b l b -STARTLINE}
+ addUserKnob {6 mute_c l c -STARTLINE}
+ addUserKnob {6 mute_d l d -STARTLINE}
+ addUserKnob {6 mute_e l e -STARTLINE}
+ addUserKnob {6 mute_f l f -STARTLINE}
+ addUserKnob {6 mute_g l g -STARTLINE}
+ addUserKnob {6 mute_h l h -STARTLINE}
+ addUserKnob {6 mute_i l i -STARTLINE}
+ addUserKnob {6 mute_j l j -STARTLINE}
+ addUserKnob {6 mute_k l k -STARTLINE}
+ addUserKnob {6 mute_l l l -STARTLINE}
+ addUserKnob {6 mute_m l m -STARTLINE}
+ addUserKnob {26 solo_line l "solo lightgroups"}
+ addUserKnob {6 solo +STARTLINE}
+ addUserKnob {4 solo_select l "" -STARTLINE M {a b c d e f g h i j k l m "" "" ""}}
+ addUserKnob {20 lightgroup_a_group l lightgroup_a n 1}
+ lightgroup_a_group 0
+ addUserKnob {26 lightgroup_a_exposure l exposure}
+ addUserKnob {41 gang T lightgroup_a_exp.gang}
+ addUserKnob {41 red T lightgroup_a_exp.red}
+ addUserKnob {41 green T lightgroup_a_exp.green}
+ addUserKnob {41 blue T lightgroup_a_exp.blue}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 lightgroup_b_group l lightgroup_b n 1}
+ lightgroup_b_group 0
+ addUserKnob {26 lightgroup_b_exposure l exposure}
+ addUserKnob {41 gang_1 l gang T lightgroup_b_exp.gang}
+ addUserKnob {41 red_1 l red T lightgroup_b_exp.red}
+ addUserKnob {41 green_1 l green T lightgroup_b_exp.green}
+ addUserKnob {41 blue_1 l blue T lightgroup_b_exp.blue}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 lightgroup_c_group l lightgroup_c n 1}
+ lightgroup_c_group 0
+ addUserKnob {26 lightgroup_c_exposure l exposure}
+ addUserKnob {41 gang_2 l gang T lightgroup_c_exp.gang}
+ addUserKnob {41 red_2 l red T lightgroup_c_exp.red}
+ addUserKnob {41 green_2 l green T lightgroup_c_exp.green}
+ addUserKnob {41 blue_2 l blue T lightgroup_c_exp.blue}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+ addUserKnob {20 lightgroup_d_group l lightgroup_d n 1}
+ lightgroup_d_group 0
+ addUserKnob {26 lightgroup_d_exposure l exposure}
+ addUserKnob {41 gang_3 l gang T lightgroup_d_exp.gang}
+ addUserKnob {41 red_3 l red T lightgroup_d_exp.red}
+ addUserKnob {41 green_3 l green T lightgroup_d_exp.green}
+ addUserKnob {41 blue_3 l blue T lightgroup_d_exp.blue}
+ addUserKnob {20 endGroup_3 l endGroup n -1}
+ addUserKnob {20 lightgroup_e_group l lightgroup_e n 1}
+ lightgroup_e_group 0
+ addUserKnob {26 lightgroup_e_exposure l exposure}
+ addUserKnob {41 gang_4 l gang T lightgroup_e_exp.gang}
+ addUserKnob {41 red_4 l red T lightgroup_e_exp.red}
+ addUserKnob {41 green_4 l green T lightgroup_e_exp.green}
+ addUserKnob {41 blue_4 l blue T lightgroup_e_exp.blue}
+ addUserKnob {20 endGroup_4 l endGroup n -1}
+ addUserKnob {20 lightgroup_f_group l lightgroup_f n 1}
+ lightgroup_f_group 0
+ addUserKnob {26 lightgroup_f_exposure l exposure}
+ addUserKnob {41 gang_5 l gang T lightgroup_f_exp.gang}
+ addUserKnob {41 red_5 l red T lightgroup_f_exp.red}
+ addUserKnob {41 green_5 l green T lightgroup_f_exp.green}
+ addUserKnob {41 blue_5 l blue T lightgroup_f_exp.blue}
+ addUserKnob {20 endGroup_5 l endGroup n -1}
+ addUserKnob {20 lightgroup_g_group l lightgroup_g n 1}
+ lightgroup_g_group 0
+ addUserKnob {26 lightgroup_g_exposure l exposure}
+ addUserKnob {41 gang_6 l gang T lightgroup_g_exp.gang}
+ addUserKnob {41 red_6 l red T lightgroup_g_exp.red}
+ addUserKnob {41 green_6 l green T lightgroup_g_exp.green}
+ addUserKnob {41 blue_6 l blue T lightgroup_g_exp.blue}
+ addUserKnob {20 endGroup_6 l endGroup n -1}
+ addUserKnob {20 lightgroup_h_group l lightgroup_h n 1}
+ lightgroup_h_group 0
+ addUserKnob {26 lightgroup_h_exposure l exposure}
+ addUserKnob {41 gang_7 l gang T lightgroup_h_exp.gang}
+ addUserKnob {41 red_7 l red T lightgroup_h_exp.red}
+ addUserKnob {41 green_7 l green T lightgroup_h_exp.green}
+ addUserKnob {41 blue_7 l blue T lightgroup_h_exp.blue}
+ addUserKnob {20 endGroup_7 l endGroup n -1}
+ addUserKnob {20 lightgroup_i_group l lightgroup_i n 1}
+ lightgroup_i_group 0
+ addUserKnob {26 lightgroup_i_exposure l exposure}
+ addUserKnob {41 gang_8 l gang T lightgroup_i_exp.gang}
+ addUserKnob {41 red_8 l red T lightgroup_i_exp.red}
+ addUserKnob {41 green_8 l green T lightgroup_i_exp.green}
+ addUserKnob {41 blue_8 l blue T lightgroup_i_exp.blue}
+ addUserKnob {20 endGroup_8 l endGroup n -1}
+ addUserKnob {20 lightgroup_j_group l lightgroup_j n 1}
+ lightgroup_j_group 0
+ addUserKnob {26 lightgroup_j_exposure l exposure}
+ addUserKnob {41 gang_9 l gang T lightgroup_j_exp.gang}
+ addUserKnob {41 red_9 l red T lightgroup_j_exp.red}
+ addUserKnob {41 green_9 l green T lightgroup_j_exp.green}
+ addUserKnob {41 blue_9 l blue T lightgroup_j_exp.blue}
+ addUserKnob {20 endGroup_9 l endGroup n -1}
+ addUserKnob {20 lightgroup_k_group l lightgroup_k n 1}
+ lightgroup_k_group 0
+ addUserKnob {26 lightgroup_k_exposure l exposure}
+ addUserKnob {41 gang_10 l gang T lightgroup_k_exp.gang}
+ addUserKnob {41 red_10 l red T lightgroup_k_exp.red}
+ addUserKnob {41 green_10 l green T lightgroup_k_exp.green}
+ addUserKnob {41 blue_10 l blue T lightgroup_k_exp.blue}
+ addUserKnob {20 endGroup_10 l endGroup n -1}
+ addUserKnob {20 lightgroup_l_group l lightgroup_l n 1}
+ lightgroup_l_group 0
+ addUserKnob {26 lightgroup_l_exposure l exposure}
+ addUserKnob {41 gang_11 l gang T lightgroup_l_exp.gang}
+ addUserKnob {41 red_11 l red T lightgroup_l_exp.red}
+ addUserKnob {41 green_11 l green T lightgroup_l_exp.green}
+ addUserKnob {41 blue_11 l blue T lightgroup_l_exp.blue}
+ addUserKnob {20 endGroup_11 l endGroup n -1}
+ addUserKnob {20 lightgroup_m_group l lightgroup_m n 1}
+ lightgroup_m_group 0
+ addUserKnob {26 lightgroup_m_exposure l exposure}
+ addUserKnob {41 gang_12 l gang T lightgroup_m_exp.gang}
+ addUserKnob {41 red_12 l red T lightgroup_m_exp.red}
+ addUserKnob {41 green_12 l green T lightgroup_m_exp.green}
+ addUserKnob {41 blue_12 l blue T lightgroup_m_exp.blue}
+ addUserKnob {20 endGroup_12 l endGroup n -1}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 955
+  ypos 46
+ }
+set Na8f7c620 [stack 0]
+ Dot {
+  name Dot14
+  xpos 753
+  ypos 49
+ }
+ Dot {
+  name Dot15
+  xpos 753
+  ypos 615
+ }
+push $Na8f7c620
+ Dot {
+  name Dot1
+  xpos 989
+  ypos 86
+ }
+set N45ffc8a0 [stack 0]
+ Dot {
+  name Dot13
+  xpos 1101
+  ypos 86
+ }
+set N45f0c4b0 [stack 0]
+ Dot {
+  name Dot2
+  xpos 1224
+  ypos 86
+ }
+set N451c6da0 [stack 0]
+ Dot {
+  name Dot3
+  xpos 1340
+  ypos 86
+ }
+set N4602bd20 [stack 0]
+ Dot {
+  name Dot4
+  xpos 1455
+  ypos 86
+ }
+set N45fe8340 [stack 0]
+ Dot {
+  name Dot5
+  xpos 1565
+  ypos 86
+ }
+set Nf34c2600 [stack 0]
+ Dot {
+  name Dot6
+  xpos 1675
+  ypos 86
+ }
+set Nf8be0e70 [stack 0]
+ Dot {
+  name Dot7
+  xpos 1775
+  ypos 86
+ }
+set Nf8922410 [stack 0]
+ Dot {
+  name Dot8
+  xpos 1876
+  ypos 86
+ }
+set N45fd5df0 [stack 0]
+ Dot {
+  name Dot9
+  xpos 1986
+  ypos 86
+ }
+set N45ed2ba0 [stack 0]
+ Dot {
+  name Dot10
+  xpos 2085
+  ypos 86
+ }
+set Nf8bdff30 [stack 0]
+ Dot {
+  name Dot11
+  xpos 2186
+  ypos 86
+ }
+set N45fe10a0 [stack 0]
+ Dot {
+  name Dot12
+  xpos 2284
+  ypos 86
+ }
+add_layer {lightgroup_m lightgroup_m.red lightgroup_m.green lightgroup_m.blue}
+ Shuffle {
+  in lightgroup_m
+  alpha black
+  name lightgroup_m
+  xpos 2250
+  ypos 144
+ }
+ Grade {
+  name lightgroup_m_grade
+  xpos 2250
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_m_exp
+  xpos 2250
+  ypos 192
+ }
+set N78584a00 [stack 0]
+push $N45fe10a0
+add_layer {lightgroup_l lightgroup_l.red lightgroup_l.green lightgroup_l.blue}
+ Shuffle {
+  in lightgroup_l
+  alpha black
+  name lightgroup_l
+  xpos 2152
+  ypos 144
+ }
+ Grade {
+  name lightgroup_l_grade
+  xpos 2152
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_l_exp
+  xpos 2152
+  ypos 192
+ }
+set Nf8923760 [stack 0]
+push $Nf8bdff30
+add_layer {lightgroup_k lightgroup_k.red lightgroup_k.green lightgroup_k.blue}
+ Shuffle {
+  in lightgroup_k
+  alpha black
+  name lightgroup_k
+  xpos 2051
+  ypos 144
+ }
+ Grade {
+  name lightgroup_k_grade
+  xpos 2051
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_k_exp
+  xpos 2051
+  ypos 192
+ }
+set Nf34c2a50 [stack 0]
+push $N45ed2ba0
+add_layer {lightgroup_j lightgroup_j.red lightgroup_j.green lightgroup_j.blue}
+ Shuffle {
+  in lightgroup_j
+  alpha black
+  name lightgroup_j
+  xpos 1952
+  ypos 144
+ }
+ Grade {
+  name lightgroup_j_grade
+  xpos 1952
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_j_exp
+  xpos 1952
+  ypos 192
+ }
+set N45f01010 [stack 0]
+push $N45fd5df0
+add_layer {lightgroup_i lightgroup_i.red lightgroup_i.green lightgroup_i.blue}
+ Shuffle {
+  in lightgroup_i
+  alpha black
+  name lightgroup_i
+  xpos 1842
+  ypos 144
+ }
+ Grade {
+  name lightgroup_i_grade
+  xpos 1842
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_i_exp
+  xpos 1842
+  ypos 192
+ }
+set N78394d20 [stack 0]
+push $Nf8922410
+add_layer {lightgroup_h lightgroup_h.red lightgroup_h.green lightgroup_h.blue}
+ Shuffle {
+  in lightgroup_h
+  alpha black
+  name lightgroup_h
+  xpos 1741
+  ypos 144
+ }
+ Grade {
+  name lightgroup_h_grade
+  xpos 1741
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_h_exp
+  xpos 1741
+  ypos 192
+ }
+set N45ffe8b0 [stack 0]
+push $Nf8be0e70
+add_layer {lightgroup_g lightgroup_g.red lightgroup_g.green lightgroup_g.blue}
+ Shuffle {
+  in lightgroup_g
+  alpha black
+  name lightgroup_g
+  xpos 1641
+  ypos 144
+ }
+ Grade {
+  name lightgroup_g_grade
+  xpos 1641
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_g_exp
+  xpos 1641
+  ypos 192
+ }
+set N45eeacd0 [stack 0]
+push $Nf34c2600
+add_layer {lightgroup_f lightgroup_f.red lightgroup_f.green lightgroup_f.blue}
+ Shuffle {
+  in lightgroup_f
+  alpha black
+  name lightgroup_f
+  xpos 1531
+  ypos 144
+ }
+ Grade {
+  name lightgroup_f_grade
+  xpos 1531
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_f_exp
+  xpos 1531
+  ypos 192
+ }
+set Nf2bb13d0 [stack 0]
+push $N45fe8340
+add_layer {lightgroup_e lightgroup_e.red lightgroup_e.green lightgroup_e.blue}
+ Shuffle {
+  in lightgroup_e
+  alpha black
+  name lightgroup_e
+  xpos 1421
+  ypos 144
+ }
+ Grade {
+  name lightgroup_e_grade
+  xpos 1421
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_e_exp
+  xpos 1421
+  ypos 192
+ }
+set N451d32b0 [stack 0]
+push $N4602bd20
+add_layer {lightgroup_d lightgroup_d.red lightgroup_d.green lightgroup_d.blue}
+ Shuffle {
+  in lightgroup_d
+  alpha black
+  name lightgroup_d
+  xpos 1306
+  ypos 144
+ }
+ Grade {
+  name lightgroup_d_grade
+  xpos 1306
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_d_exp
+  xpos 1306
+  ypos 192
+ }
+set N44dcf8c0 [stack 0]
+push $N451c6da0
+add_layer {lightgroup_c lightgroup_c.red lightgroup_c.green lightgroup_c.blue}
+ Shuffle {
+  in lightgroup_c
+  alpha black
+  name lightgroup_c
+  xpos 1190
+  ypos 144
+ }
+ Grade {
+  name lightgroup_c_grade
+  xpos 1190
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_c_exp
+  xpos 1190
+  ypos 192
+ }
+set N44e11090 [stack 0]
+push $N45f0c4b0
+add_layer {lightgroup_b lightgroup_b.red lightgroup_b.green lightgroup_b.blue}
+ Shuffle {
+  in lightgroup_b
+  alpha black
+  name lightgroup_b
+  xpos 1067
+  ypos 144
+ }
+ Grade {
+  name lightgroup_b_grade
+  xpos 1067
+  ypos 168
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_b_exp
+  xpos 1067
+  ypos 192
+ }
+set N44e3f080 [stack 0]
+push $N45ffc8a0
+add_layer {lightgroup_a lightgroup_a.red lightgroup_a.green lightgroup_a.blue}
+ Shuffle {
+  in lightgroup_a
+  alpha black
+  name lightgroup_a
+  xpos 955
+  ypos 146
+ }
+ Grade {
+  name lightgroup_a_grade
+  xpos 955
+  ypos 170
+ }
+ EXPTool {
+  mode Stops
+  name lightgroup_a_exp
+  selected true
+  xpos 955
+  ypos 194
+ }
+set N44cecd80 [stack 0]
+ Switch {
+  inputs 13
+  which {{parent.solo_select}}
+  name solo_select
+  xpos 1332
+  ypos 429
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 809
+  ypos 197
+ }
+set N44d01ee0 [stack 0]
+push $N78584a00
+ Switch {
+  inputs 2
+  which {{parent.mute_m}}
+  name lightgroup_m_mute
+  xpos 2249
+  ypos 265
+ }
+push $N44d01ee0
+push $Nf8923760
+ Switch {
+  inputs 2
+  which {{parent.mute_l}}
+  name lightgroup_l_mute
+  xpos 2152
+  ypos 267
+ }
+push $N44d01ee0
+push $Nf34c2a50
+ Switch {
+  inputs 2
+  which {{parent.mute_k}}
+  name lightgroup_k_mute
+  xpos 2051
+  ypos 263
+ }
+push $N44d01ee0
+push $N45f01010
+ Switch {
+  inputs 2
+  which {{parent.mute_j}}
+  name lightgroup_j_mute
+  xpos 1952
+  ypos 266
+ }
+push $N44d01ee0
+push $N78394d20
+ Switch {
+  inputs 2
+  which {{parent.mute_i}}
+  name lightgroup_i_mute
+  xpos 1842
+  ypos 264
+ }
+push $N44d01ee0
+push $N45ffe8b0
+ Switch {
+  inputs 2
+  which {{parent.mute_h}}
+  name lightgroup_h_mute
+  xpos 1741
+  ypos 265
+ }
+push $N44d01ee0
+push $N45eeacd0
+ Switch {
+  inputs 2
+  which {{parent.mute_g}}
+  name lightgroup_g_mute
+  xpos 1641
+  ypos 265
+ }
+push $N44d01ee0
+push $Nf2bb13d0
+ Switch {
+  inputs 2
+  which {{parent.mute_f}}
+  name lightgroup_f_mute
+  xpos 1534
+  ypos 265
+ }
+push $N44d01ee0
+push $N451d32b0
+ Switch {
+  inputs 2
+  which {{parent.mute_e}}
+  name lightgroup_e_mute
+  xpos 1421
+  ypos 264
+ }
+push $N44d01ee0
+push $N44dcf8c0
+ Switch {
+  inputs 2
+  which {{parent.mute_d}}
+  name lightgroup_d_mute
+  xpos 1306
+  ypos 265
+ }
+push $N44d01ee0
+push $N44e11090
+ Switch {
+  inputs 2
+  which {{parent.mute_c}}
+  name lightgroup_c_mute
+  xpos 1190
+  ypos 265
+ }
+push 0
+push $N44d01ee0
+push $N44cecd80
+ Switch {
+  inputs 2
+  which {{parent.mute_a}}
+  name lightgroup_a_mute
+  xpos 955
+  ypos 265
+ }
+push $N44d01ee0
+push $N44e3f080
+ Switch {
+  inputs 2
+  which {{parent.mute_b}}
+  name lightgroup_b_mute
+  xpos 1067
+  ypos 265
+ }
+ Merge2 {
+  inputs 13+1
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge1
+  xpos 1534
+  ypos 435
+ }
+ Switch {
+  inputs 2
+  which {{parent.solo}}
+  name solo
+  xpos 1534
+  ypos 565
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 1534
+  ypos 606
+ }
+ Output {
+  name Output1
+  xpos 1534
+  ypos 642
+ }
+push $N44cecd80
+ Viewer {
+  frame_range 1-100
+  name Viewer1
+  xpos 701
+  ypos 743
+ }
+end_group
