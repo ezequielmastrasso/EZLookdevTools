@@ -14,6 +14,18 @@
 [&nbsp;&nbsp;&nbsp;&nbsp;Katana Surfacing Projects](#Katana-Surfacing-Projects)  
 [Macros Gizmos and Templates](#Macros-Gizmos-and-Templates)  
 [&nbsp;&nbsp;&nbsp;&nbsp;Studio Lighting](#Studio-Lighting)   
+[&nbsp;&nbsp;&nbsp;&nbsp;Gaffer](#Gaffer)   
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetBoundingBox Node](#LDTGetBoundingBox-Node)     
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AttributeRead Node](#LDTAttributeRead-Node)  
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SurfacingSets Node](#SurfacingSets-Node)   
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMetadata Node](#LDTShowMetadata-Node)  
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shaderball Node](#LDTShaderball-Node)    
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShaderView](#ShaderView)   
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShadingModes](#ShadingModes)     
+[&nbsp;&nbsp;&nbsp;&nbsp;Nuke](#Nuke)   
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOV correct](#AOV-Correct)   
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lightgroups correct](#Lightgroups-Correct)   
+[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lightgroups ContactSheet](#Lightgroups-ContactSheet)   
 [&nbsp;&nbsp;&nbsp;&nbsp;Katana](#Katana)   
 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asset Turntable Template](#Asset-Turntable-Template)   
 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Material Lookdev](#Material-Lookdev)   
@@ -22,17 +34,6 @@
 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Texture Locatization](#Texture-Locatization)   
 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interactive Filters](#Interactive-Filters)   
 [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Grey Shaders Overrides](#Grey-Shaders-Overrides)   
-[&nbsp;&nbsp;&nbsp;&nbsp;Nuke](#Nuke)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AOV correct](#AOV-Correct)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lightgroups correct](#Lightgroups-Correct)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lightgroups ContactSheet](#Lightgroups-ContactSheet)   
-[&nbsp;&nbsp;&nbsp;&nbsp;Gaffer](#Gaffer)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetBoundingBox Node](#LDTGetBoundingBox-Node)     
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AttributeRead Node](#LDTAttributeRead-Node)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShaderView](#ShaderView)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShadingModes](#ShadingModes)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SurfacingSets](#SurfacingSets)   
-[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowMetadata](#LDTShowMetadata)   
 [Writing tools](#Writing-tools)   
 [&nbsp;&nbsp;&nbsp;&nbsp;Example plugin](#Example-plugin)   
 [Road Map](#Road-Map)   
@@ -214,16 +215,75 @@ It can also be used to create collections of all unique values for any given att
 # Macros Gizmos and Templates
 
 ## Studio Lighting
-A Studio ligthrig and a nuke template is available for Maya, Katana, and Gaffer.
+A Studio ligthrig and a nuke template is available for Gaffer.
 
 WIP IMAGE
 <img width="100%" src="docs/images/studioLights.png" alt="EZSurfacing Tools" style="margin-right: 10px;" />
 
 ```
 /plugis/gaffer/templates/studioLighting.gfr
-/plugis/katana/templates/studioLighting.kat
-/plugis/maya/templates/studioLighting.mb
 ```
+
+## Gaffer
+My Gaffer playground.
+
+### LDTGetBoundingBox Node
+Exposes the boundingbox (local space) on read only plugs.
+<img width="100%" src="docs/images/gafferLDTGetBoundingBox.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
+
+### LDTAttributeRead Node
+Exposes the attribute value on a read only plug.
+<img width="100%" src="docs/images/gafferLDTAttributeRead.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
+
+### SurfacingSets Node
+Creates Sets for each unique value for a given attribute.
+<img width="100%" src="docs/images/gafferSurfacingSets.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
+
+### LDTShowMetadata Node
+Search metadata keys with partial matching, and overlays on the image.
+For ie: **/stats/geo** will display all /arnold/**stats/geo...**, **samples** will display all keys that contain the word **samples**.
+Leave a blank field, and it will display all available keywords
+
+<img width="70%" src="docs/images/gafferLDTShowMetadataKeys.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
+<img width="100%" src="docs/images/gafferLDTShowMetadata.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" /> 
+
+### LDTShaderBall Node
+A shader ball scene, Shader, displacement plugs and subdiv options plug.
+<img width="100%" src="docs/images/gafferShaderBall.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
+
+### ShaderView
+Replaces the default ShaderBall scene node in the ShaderView, with the pixar Teapot or your own geometry.   
+
+<img width="100%" src="docs/images/gafferShaderView.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />   
+This ShaderView scene, is also available as the ArnoldLDTShaderBall Node.  
+
+
+### ShadingModes
+#### Viewer diagnostic shading modes
+##### LDTPattern2k and LDTPattern4k
+<img width="100%" src="docs/images/gafferDiagnosticPatterns.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />   
+This ShaderView scene, is also available as the ArnoldLDTShaderBall Node.  
+
+
+## Nuke
+### AOV Correct
+Select a nuke layer, and color correct it
+
+<img width="50%" src="docs/images/nukeAovCorrect.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
+
+### Lightgroups Correct
+Select a lightgroup layer from the preset menu, and mute/solo/color correct it
+
+<img width="50%" src="docs/images/nukeLigthgroupsCorrect.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
+
+### Lightgroups contactSheet
+Creates a contact sheet of all the default lightgroups.  
+Two grid options available 1x5, and 1x12
+
+<img width="47%" src="docs/images/nukeLigthgroupsContactSheet.jpg"      alt="EZSurfacing Tools" style="margin-right: 10px;" /><img width="47%" src="docs/images/nukeLigthgroupsContactSheet2.jpg"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
+
+###### Note
+Although you can select all the inputs, by default it expects ligthgroups named as in: lightgroup_a, lightgroup_b, lightgroup_c, and so on.
 
 ## Katana
 
@@ -308,62 +368,6 @@ This filter overrides only the diffuseColor with a 0.18 grey color.
 Keeping all other materials features values, like specular, roughness, normals, diplacements, etc.
 
 <img width="100%" src="docs/images/katanaPrmanInteractiveFilterGreyAlbedo.jpg"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
-
-## Nuke
-### AOV Correct
-Select a nuke layer, and color correct it
-
-<img width="50%" src="docs/images/nukeAovCorrect.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
-
-### Lightgroups Correct
-Select a lightgroup layer from the preset menu, and mute/solo/color correct it
-
-<img width="50%" src="docs/images/nukeLigthgroupsCorrect.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
-
-### Lightgroups contactSheet
-Creates a contact sheet of all the default lightgroups.  
-Two grid options available 1x5, and 1x12
-
-<img width="47%" src="docs/images/nukeLigthgroupsContactSheet.jpg"      alt="EZSurfacing Tools" style="margin-right: 10px;" /><img width="47%" src="docs/images/nukeLigthgroupsContactSheet2.jpg"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
-
-###### Note
-Although you can select all the inputs, by default it expects ligthgroups named as in: lightgroup_a, lightgroup_b, lightgroup_c, and so on.
-
-## Gaffer
-My Gaffer playground.
-
-### LDTGetBoundingBox Node
-Exposes the boundingbox (local space) on read only plugs.
-<img width="100%" src="docs/images/gafferLDTGetBoundingBox.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
-
-### LDTAttributeRead Node
-Exposes the attribute value on a read only plug.
-<img width="100%" src="docs/images/gafferLDTAttributeRead.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
-
-### SurfacingSets
-Creates Sets for each unique value for a given attribute.
-<img width="100%" src="docs/images/gafferSurfacingSets.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />  
-
-### LDTShowMetadata
-Search metadata keys with partial matching, and overlays on the image.
-For ie: **/stats/geo** will display all /arnold/**stats/geo...**, **samples** will display all keys that contain the word **samples**.
-Leave a blank field, and it will display all available keywords
-
-<img width="70%" src="docs/images/gafferLDTShowMetadataKeys.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />
-<img width="100%" src="docs/images/gafferLDTShowMetadata.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" /> 
-
-### ShaderView
-Replaces the default ShaderBall scene node in the ShaderView, with the pixar Teapot or your own geometry.   
-
-<img width="100%" src="docs/images/gafferShaderView.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />   
-This ShaderView scene, is also available as the ArnoldLDTShaderBall Node.  
-
-
-### ShadingModes
-#### Viewer diagnostic shading modes
-##### LDTPattern2k and LDTPattern4k
-<img width="100%" src="docs/images/gafferDiagnosticPatterns.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />   
-This ShaderView scene, is also available as the ArnoldLDTShaderBall Node.  
 
 ## Writing tools
 ### Developing Plugins
