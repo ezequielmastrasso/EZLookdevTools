@@ -8,6 +8,7 @@ from GafferArnoldLDT import ArnoldLDTShaderBall
 from GafferSceneLDT import LDTShaderBall
 from GafferSceneLDT import LDTAtttributeRead
 from GafferSceneLDT import LDTGetBoundingBox
+from GafferSceneLDT import LDTSurfacingSets
 
 nodeMenu = GafferUI.NodeMenu.acquire(application)
 nodeMenu.append(
@@ -26,6 +27,13 @@ nodeMenu.append(
     nodeCreator=LDTGetBoundingBox,
     searchText="LDTGetBoundingBox",
 )
+
+nodeMenu.append(
+    path="/LDT/LDTSurfacingSets",
+    nodeCreator=LDTSurfacingSets.LDTSurfacingSets,
+    searchText="LDTSurfacingSets",
+)
+
 
 print "LDT: nodes added to menu"
 
