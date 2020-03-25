@@ -208,7 +208,6 @@ def delete_surfacing_project(project):
     """
     if is_surfacing_project(project):
         pm.delete(project.members())
-        pm.delete(project)
 
 
 def get_surfacing_objects(project):
@@ -347,6 +346,13 @@ def add_mesh_transforms_to_surfacing_object(
     pm.select()
     if is_surfacing_object(surfacing_object):
         for item in object_list:
+            # Disconnect the objects from other Surf proj and obj
+            for c in item.instObjGroups.listConnections(c=True, p=True):
+                if is_surfacing_object(c[1].node()) or is_surfacing_project(c[1].node()):
+                    logger.info(
+                        "disconnecting from Surf project or obj: %s" % c[1].node()
+                    )
+                    pm.disconnectAttr("%s"%c[0], "%s"%c[1])
             for transform in get_mesh_transforms(item):
                 pm.select(transform)
                 add_member(surfacing_object, transform)
@@ -620,9 +626,10 @@ def set_wifreframe_color_black():
     transforms = pm.ls(type="transform")
     shape_transforms = get_mesh_transforms(transforms)
     for mesh in shape_transforms:
-        mesh.overrideEnabled.set(1)
-        mesh.overrideRGBColors.set(0)
-        mesh.overrideColor.set(1)
+        mesh_shape = mesh.getShape()
+        mesh_shape.overrideEnabled.set(1)
+        mesh_shape.overrideRGBColors.set(0)
+        mesh_shape.overrideColor.set(1)
 
 
 def set_wifreframe_color_none():
@@ -630,7 +637,8 @@ def set_wifreframe_color_none():
     transforms = pm.ls(type="transform")
     shape_transforms = get_mesh_transforms(transforms)
     for mesh in shape_transforms:
-        mesh.overrideEnabled.set(0)
+        mesh_shape = mesh.getShape()
+        mesh_shape.overrideEnabled.set(0)
 
 
 def set_wireframe_colors_per_project():
@@ -649,10 +657,11 @@ def set_wireframe_colors_per_project():
         wire_color = random.randint(1, 31)
         for surfacingObject in get_surfacing_objects(project):
             for mesh in surfacingObject.members():
+                mesh_shape = mesh.getShape()
                 try:
-                    mesh.overrideEnabled.set(1)
-                    mesh.overrideRGBColors.set(0)
-                    mesh.overrideColor.set(wire_color)
+                    mesh_shape.overrideEnabled.set(1)
+                    mesh_shape.overrideRGBColors.set(0)
+                    mesh_shape.overrideColor.set(wire_color)
                 except:
                     logger.error('Could not set override color for: %s, might '
                                  'belong to a display layer'
@@ -675,10 +684,11 @@ def set_wireframe_colors_per_object():
     for project in projects:
         for surfacingObject in get_surfacing_objects(project):
             for mesh in surfacingObject.members():
+                mesh_shape = mesh.getShape()
                 try:
-                    mesh.overrideEnabled.set(1)
-                    mesh.overrideRGBColors.set(1)
-                    mesh.overrideColorRGB.set(
+                    mesh_shape.overrideEnabled.set(1)
+                    mesh_shape.overrideRGBColors.set(1)
+                    mesh_shape.overrideColorRGB.set(
                         ldtutils.get_random_color(surfacingObject)
                     )
                 except:
