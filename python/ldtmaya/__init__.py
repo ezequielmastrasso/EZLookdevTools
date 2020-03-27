@@ -113,6 +113,8 @@ def create_surfacing_object(project, name=None):
     )
     project.add(surfacing_set)
 
+    return surfacing_set
+
 
 def get_surfacing_root():
     """
@@ -399,7 +401,8 @@ def remove_invalid_characters():
     like '_'."""
     project_root = get_surfacing_root()
     surfacing_projects = get_surfacing_projects()
-    invalid_character = '_'
+    #invalid_character = '_'
+    invalid_character = '*'
     for project in surfacing_projects:
         if invalid_character in project.name():
             project.rename(project.name().replace(invalid_character, ''))
