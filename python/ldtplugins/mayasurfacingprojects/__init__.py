@@ -59,11 +59,16 @@ class MayaSurfacingProjects(IPlugin):
         material_layout = QtWidgets.QHBoxLayout()
         red_text = '#AA0000'
 
+        # Current Selections
+        self.ui_selected_project = None
+        self.ui_selected_object = None 
+
         # Create UI widgets
         self.refresh = QtWidgets.QPushButton("refresh")
-        self.sync_selection = QtWidgets.QCheckBox("Sync object set selection")
-        self.expand_selection = QtWidgets.QCheckBox(
-            "expand selection to members")
+        self.sync_selection = QtWidgets.QCheckBox("Selection Sync")
+        self.sync_selection_mode = QtWidgets.QComboBox()
+        self.sync_selection_mode.addItem("Set Selection")
+        self.sync_selection_mode.addItem("Members Selection")
 
         self.project_new_btn = QtWidgets.QPushButton("new texture project")
         self.project_delete_btn = QtWidgets.QPushButton("X")
@@ -104,7 +109,7 @@ class MayaSurfacingProjects(IPlugin):
         main_layout.addWidget(self.refresh)
         main_layout.addLayout(selection_layout)
         selection_layout.addWidget(self.sync_selection)
-        selection_layout.addWidget(self.expand_selection)
+        selection_layout.addWidget(self.sync_selection_mode)
         main_layout.addLayout(project_layout)
         project_layout.addWidget(self.list_projects)
         project_layout.addLayout(project_btns_layout)
@@ -162,19 +167,22 @@ class MayaSurfacingProjects(IPlugin):
             finally:
                 self.update_ui_projects()
 
+
     def delete_project(self):
         """Delete a surfacing project."""
         selected_project = pm.PyNode(self.list_projects.currentItem().text())
         ldtmaya.delete_surfacing_project(selected_project)
         self.update_ui_projects()
 
+
     def select_surfacing_object(self, item):
         """Select surfacing object on the scene."""
         selected_texture_object = pm.PyNode(str(item.text()))
         if self.sync_selection.isChecked():
-            pm.select(selected_texture_object, ne=True)
-            if self.expand_selection.isChecked():
+            if self.sync_selection_mode.currentText() == 'Members Selection':
                 pm.select(selected_texture_object)
+            elif self.sync_selection_mode.currentText() == 'Set Selection':
+                pm.select(selected_texture_object, ne=True)
 
     def create_project(self):
         """Create a surfacing project and update the UI."""
@@ -217,7 +225,9 @@ class MayaSurfacingProjects(IPlugin):
         self.list_texture_objects.clear()
         for each in texture_objects:
             self.list_texture_objects.addItem(str(each))
-        if self.sync_selection.isChecked():
+        if self.sync_selection_mode.currentText() == 'Members Selection':
+                pm.select(selected_project)
+        elif self.sync_selection_mode.currentText() == 'Set Selection':
             pm.select(selected_project, ne=True)
 
     def add_to_surfacing_object(self):
