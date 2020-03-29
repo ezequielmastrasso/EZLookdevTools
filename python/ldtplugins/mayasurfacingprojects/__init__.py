@@ -225,10 +225,11 @@ class MayaSurfacingProjects(IPlugin):
         self.list_texture_objects.clear()
         for each in texture_objects:
             self.list_texture_objects.addItem(str(each))
-        if self.sync_selection_mode.currentText() == 'Members Selection':
-                pm.select(selected_project)
-        elif self.sync_selection_mode.currentText() == 'Set Selection':
-            pm.select(selected_project, ne=True)
+        if self.sync_selection.isChecked():
+            if self.sync_selection_mode.currentText() == 'Members Selection':
+                    pm.select(selected_project)
+            elif self.sync_selection_mode.currentText() == 'Set Selection':
+                pm.select(selected_project, ne=True)
 
     def add_to_surfacing_object(self):
         """Add maya selection to currently selected surfacing object"""
