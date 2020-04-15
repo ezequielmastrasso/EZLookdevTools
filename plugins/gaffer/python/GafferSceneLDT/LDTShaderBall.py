@@ -19,14 +19,25 @@ class LDTShaderBall(GafferScene.SceneNode):
         self["resolution"] = Gaffer.IntPlug(
             defaultValue=512, minValue=0
         )
+        
+        self["scene"] = Gaffer.IntPlug("scene")
+        Gaffer.Metadata.registerValue( self["scene"], 'nodule:type', '' )
+        Gaffer.Metadata.registerValue( self["scene"], 'plugValueWidget:type', 'GafferUI.PresetsPlugValueWidget' )
+        Gaffer.Metadata.registerValue( self["scene"], 'preset:shaderBall', 0 )
+        Gaffer.Metadata.registerValue( self["scene"], 'preset:customGeo', 1 )
+
         self["custom_geo"] = Gaffer.StringPlug(
-            defaultValue="${LOOKDEVTOOLS}/resources/abc/teapot.abc"
-        )
-        self["custom_geo_scale"] = Gaffer.FloatPlug(
-            defaultValue=1.0
+            defaultValue="${LOOKDEVTOOLS}/resources/assets/teapot/teapot.abc"
         )
 
         # Private internal network
+
+        # ShaderBall
+        s = Gaffer.ScriptNode()
+        __shaderBallReference = s["__shaderBallReference"] = Gaffer.Reference()
+        __shaderBallReference.load("/run/media/ezequielm/misc/wrk/dev/EZLookdevTools/plugins/gaffer/boxes/LDTShaderBall.grf")
+
+        self.addChild(__shaderBallReference)
 
         # Custom geo
         self["__teapot"] = GafferScene.SceneReader()
@@ -35,57 +46,40 @@ class LDTShaderBall(GafferScene.SceneNode):
         )
         self["__teapot"]["transform"]["scale"].setValue(
             imath.V3f(
-                0.0500000007, 0.0500000007, 0.0500000007
+                1, 1, 1
             )
         )
 
-        self["MeshType1"] = GafferScene.MeshType(
-            "MeshType1"
-        )
-        self["PathFilter7"] = GafferScene.PathFilter(
-            "PathFilter7"
-        )
-        self["MeshType1"]["filter"].setInput(
-            self["PathFilter7"]["out"]
-        )
-        self["MeshType1"]["meshType"].setValue(
-            "catmullClark"
-        )
-        self["PathFilter7"]["paths"].setValue(
-            IECore.StringVectorData(["/..."])
-        )
+        self["__teapotMeshType"] = GafferScene.MeshType("__teapotMeshType")
+        self["__teapotPathFilter"] = GafferScene.PathFilter("__teapotPathFilter")
+        self["__teapotMeshType"]["filter"].setInput(self["__teapotPathFilter"]["out"])
+        self["__teapotMeshType"]["meshType"].setValue("catmullClark")
+        self["__teapotPathFilter"]["paths"].setValue(IECore.StringVectorData(["/..."]))
 
-        self["MeshType1"]["in"].setInput(
-            self["__teapot"]["out"]
-        )
+        self["__teapotMeshType"]["in"].setInput(self["__teapot"]["out"])
+
+        self["__teapotSet"] = GafferScene.Set( "SHADERBALL_material" )
+        self["__teapotSet"]["name"].setValue( 'SHADERBALL:material' )
+        self["__teapotSet"]["filter"].setInput(self["__teapotPathFilter"]["out"])
+        self["__teapotSet"]["in"].setInput(self["__teapotMeshType"]["out"])
 
         # Root
-        self["__root"] = GafferScene.Group()
-        self["__root"]["transform"]["scale"]["x"].setInput(
-            self["custom_geo_scale"]
-        )
-        self["__root"]["transform"]["scale"]["y"].setInput(
-            self["custom_geo_scale"]
-        )
-        self["__root"]["transform"]["scale"]["z"].setInput(
-            self["custom_geo_scale"]
-        )
-        self["__root"]["in"][0].setInput(
-            self["MeshType1"]["out"]
-        )
+        self["__sceneSwitch"] = Gaffer.Switch()
+        self["__sceneSwitch"].setup(GafferScene.ScenePlug( "in"))
+        self["__sceneSwitch"]["index"].setInput(self["scene"])
+        self["__sceneSwitch"]["in"].addChild( GafferScene.ScenePlug( "in0", flags = Gaffer.Plug.Flags.Default | Gaffer.Plug.Flags.Dynamic ) )
+        self["__sceneSwitch"]["in"].addChild( GafferScene.ScenePlug( "in1", flags = Gaffer.Plug.Flags.Default | Gaffer.Plug.Flags.Dynamic ) )
+
+        self["__sceneSwitch"]["in"]["in0"].setInput(self["__shaderBallReference"]["out"])
+        self["__sceneSwitch"]["in"]["in1"].setInput(self["__teapotSet"]["out"])
 
         self["__camera"] = GafferScene.Camera()
-        self["__camera"]["transform"]["translate"].setValue(
-            imath.V3f(0, 2.29999995, 9.5)
-        )
-        self["__camera"]["transform"]["rotate"].setValue(
-            imath.V3f(-9, 0, 0)
-        )
+        self["__camera"]["transform"]["translate"].setValue(imath.V3f(0, 70, 175))
+        self["__camera"]["transform"]["rotate"].setValue(imath.V3f(-16, 0, 0))
         self["__camera"]["fieldOfView"].setValue(20.0)
-
         self["__group"] = GafferScene.Group()
         self["__group"]["in"][0].setInput(
-            self["__root"]["out"]
+            self["__sceneSwitch"]["out"]
         )
         self["__group"]["in"][1].setInput(
             self["__camera"]["out"]
@@ -98,15 +92,18 @@ class LDTShaderBall(GafferScene.SceneNode):
         )
         self["__subTree"]["root"].setValue("/group")
 
-        self[
-            "__shaderAssignment"
-        ] = GafferScene.ShaderAssignment()
+        self["__shaderAssignment"] = GafferScene.ShaderAssignment()
         self["__shaderAssignment"]["in"].setInput(
             self["__subTree"]["out"]
         )
         self["__shaderAssignment"]["shader"].setInput(
             self["shader"]
         )
+        self["__shaderAssignmentFilter"] = GafferScene.SetFilter( "SetFilter" )
+        self["__shaderAssignmentFilter"]["setExpression"].setValue( 'SHADERBALL:material' )
+
+        self["__shaderAssignment"]["filter"].setInput(self["__shaderAssignmentFilter"]["out"])
+
 
         self["__options"] = GafferScene.StandardOptions()
         self["__options"]["in"].setInput(

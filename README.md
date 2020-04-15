@@ -253,9 +253,9 @@ A shader ball scene, Shader, displacement plugs and subdiv options plug.
 
 ### ShaderView
 Replaces the default ShaderBall scene node in the ShaderView, with the pixar Teapot or your own geometry.   
-
-<img width="100%" src="docs/images/gafferShaderView.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />   
-This ShaderView scene, is also available as the ArnoldLDTShaderBall Node.  
+ 
+<img width="100%" src="docs/images/gafferShaderView2.png"      alt="EZSurfacing Tools" style="margin-right: 10px;" />   
+This ShaderView scene, is also available as the ArnoldLDTShaderBall Node.
 
 
 ### ShadingModes
