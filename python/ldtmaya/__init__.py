@@ -701,21 +701,26 @@ def set_wireframe_colors_per_object():
                                  )
 
 
-def set_materials_per_object():
+def set_materials_per_object(shader_type):
     """Create a material per surfacing project and assigns it"""
     delete_materials()
     projects = get_surfacing_projects()
     for project in projects:
         for obj in get_surfacing_objects(project):
             shader, shading_group = create_shader(
-                type='blinn')
+                type=shader_type)
             pm.select(obj)
             meshes = pm.ls(sl=True)
             pm.sets(shading_group, forceElement=meshes)
             pm.select(None)
-            shader.color.set(
+            if shader_type == 'aiStandardSurface':
+                shader.baseColor.set(
                 ldtutils.get_random_color(obj)
-            )
+                )
+            else:
+                shader.color.set(
+                    ldtutils.get_random_color(obj)
+                )
             pm.setAttr('%s.%s' % (shading_group, ATTR_MATERIAL),
                        'obj', force=True)
             pm.setAttr('%s.%s' %
@@ -724,20 +729,25 @@ def set_materials_per_object():
                        'color', force=True)
 
 
-def set_materials_per_project():
+def set_materials_per_project(shader_type):
     """Create a material per surfacing project and assigns it"""
     delete_materials()
     projects = get_surfacing_projects()
     for project in projects:
         shader, shading_group = create_shader(
-            type='blinn')
+            type=shader_type)
         pm.select(project)
         meshes = pm.ls(sl=True)
         pm.sets(shading_group, forceElement=meshes)
         pm.select(None)
-        shader.color.set(
-            ldtutils.get_random_color(project)
-        )
+        if shader_type == 'aiStandardSurface':
+            shader.baseColor.set(
+                ldtutils.get_random_color(project)
+            )
+        else:
+            shader.color.set(
+                ldtutils.get_random_color(project)
+            )
         pm.setAttr('%s.%s' % (shading_group, ATTR_MATERIAL),
                    'project', force=True)
         pm.setAttr('%s.%s' %

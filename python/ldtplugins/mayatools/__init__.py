@@ -65,6 +65,9 @@ class MayaTools(IPlugin):
             'QPushButton {color: %s;}' % red_text)
         # material colors
         self.lbl_materials = QtWidgets.QLabel("material colors")
+        self.shader_type = QtWidgets.QComboBox()
+        self.shader_type.addItem("blinn")
+        self.shader_type.addItem("aiStandardSurface")
         self.btn_material_color_projects = QtWidgets.QPushButton(
             "per Surfacing Project")
         self.btn_material_color_objects = QtWidgets.QPushButton(
@@ -79,6 +82,7 @@ class MayaTools(IPlugin):
         wireframe_layout.addWidget(self.btn_wireframe_color_none)
         main_layout.addWidget(self.lbl_materials)
         main_layout.addLayout(material_layout)
+        material_layout.addWidget(self.shader_type)
         material_layout.addWidget(self.btn_material_color_projects)
         material_layout.addWidget(self.btn_material_color_objects)
 
@@ -96,8 +100,8 @@ class MayaTools(IPlugin):
             ldtmaya.set_wifreframe_color_none
         )
         self.btn_material_color_projects.clicked.connect(
-            ldtmaya.set_materials_per_project
+            lambda: ldtmaya.set_materials_per_project(self.shader_type.currentText())
         )
         self.btn_material_color_objects.clicked.connect(
-            ldtmaya.set_materials_per_object
+            lambda: ldtmaya.set_materials_per_object(self.shader_type.currentText())
         )
