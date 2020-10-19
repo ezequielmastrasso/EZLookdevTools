@@ -41,7 +41,7 @@
 [&nbsp;&nbsp;&nbsp;&nbsp;What's next](#Whats-next)   
 [Credits](#Credits)   
 
-| WARNING: Under development, do not use (yet!) |
+| WARNING: most of this toolset was cleaned and moved up in my repo LDTGaffer, also used in my other repo gaffer-examples |
 | --- |
 
 # LookdevTools
