@@ -6,7 +6,7 @@
 
 # LOOKDEVTOOLS
 # Replace this path with your own
-export LOOKDEVTOOLS="/nas/emc_1/wrk/dev/EZLookdevTools"
+export LOOKDEVTOOLS="/home/ezequielm/Documents/dev/EZLookdevTools"
 
 ## PYTHON
 export PYTHONPATH="${PYTHONPATH}:$LOOKDEVTOOLS/python"
